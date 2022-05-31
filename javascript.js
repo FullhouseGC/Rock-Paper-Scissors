@@ -1,3 +1,4 @@
+
 // Array where the choices are stored for computer
 let computerChoice = ["Piedra", "Papel", "Tijera"];
 
@@ -14,37 +15,26 @@ let playerPrompt = prompt("Piedra, Papel o Tijera?");
 let playerChoice = playerPrompt.toUpperCase();
 
 //Comparing player choice with random computer choice and see who won (or tied)
-let answer;
+function totalChoice (playerChoice, computerAnswer){
 switch(true) {
     case (playerChoice === "PIEDRA" && computerAnswer === "Piedra"):
-        answer = "Ordenador elijio piedra, es empate!";
-        break;
+        return "Ordenador elijio piedra, es empate!";
     case (playerChoice === "PIEDRA" && computerAnswer === "Papel"):
-        answer = "Ordenador elijio papel, has perdido!";
-        break;
+        return "Ordenador elijio papel, has perdido!";
     case (playerChoice === "PIEDRA" && computerAnswer === "Tijera"):
-        answer = "Ordenador elijio tijera, has ganado!";
-        break;
+        return "Ordenador elijio tijera, has ganado!";
     case (playerChoice === "PAPEL" && computerAnswer === "Piedra"):
-        answer = "Ordenador elijio piedra, has ganado!";
-        break;
+        return "Ordenador elijio piedra, has ganado!";
     case (playerChoice === "PAPEL" && computerAnswer === "Papel"):
-        answer = "Ordenador elijio papel, es empate!";
-        break;
+        return "Ordenador elijio papel, es empate!";
     case (playerChoice === "PAPEL" && computerAnswer === "Tijera"):
-        answer = "Ordenador elijio tijera, has perdido!";
-        break;
+        return "Ordenador elijio tijera, has perdido!";
     case (playerChoice === "TIJERA" && computerAnswer === "Piedra"):
-        answer = "Ordenador elijio piedra, has perdido!";
-        break;
+        return "Ordenador elijio piedra, has perdido!";
     case (playerChoice === "TIJERA" && computerAnswer === "Papel"):
-        answer = "Ordenador elijio papel, has ganado!";
-        break;
+        return "Ordenador elijio papel, has ganado!";
     case (playerChoice === "TIJERA" && computerAnswer === "Tijera"):
-        answer = "Ordenador elijio tijera, es empate!";
-        break;
-}
-
+        return "Ordenador elijio tijera, es empate!";
+} }
 // This is the message players recieve
-console.log(alert(answer));
-console.log(answer);
+console.log(totalChoice(playerChoice, computerAnswer));
