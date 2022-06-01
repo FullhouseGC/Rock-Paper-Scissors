@@ -1,40 +1,46 @@
-
-// Array where the choices are stored for computer
-let computerChoice = ["Piedra", "Papel", "Tijera"];
-
 // This function will choose a random item from the array computerChoice 
 function computerRandom(){
+    const computerChoice = ["Piedra", "Papel", "Tijera"];
     return computerChoice[Math.floor(Math.random()*computerChoice.length)]
 }
-let computerAnswer = computerRandom();
-
-// Promt asking for players choice
-let playerPrompt = prompt("Piedra, Papel o Tijera?");
-
-// Converting the answer in all caps so they can write it case insensitive
-let playerChoice = playerPrompt.toUpperCase();
-
 //Comparing player choice with random computer choice and see who won (or tied)
-function totalChoice (playerChoice, computerAnswer){
+function totalChoice (playerChoice, computerChoice){
 switch(true) {
-    case (playerChoice === "PIEDRA" && computerAnswer === "Piedra"):
+    case (playerChoice === "PIEDRA" && computerChoice === "Piedra"):
         return "Ordenador elijio piedra, es empate!";
-    case (playerChoice === "PIEDRA" && computerAnswer === "Papel"):
+    case (playerChoice === "PIEDRA" && computerChoice === "Papel"):
+        computerScore++
         return "Ordenador elijio papel, has perdido!";
-    case (playerChoice === "PIEDRA" && computerAnswer === "Tijera"):
+    case (playerChoice === "PIEDRA" && computerChoice === "Tijera"):
+        playerScore++
         return "Ordenador elijio tijera, has ganado!";
-    case (playerChoice === "PAPEL" && computerAnswer === "Piedra"):
+    case (playerChoice === "PAPEL" && computerChoice === "Piedra"):
+        playerScore++
         return "Ordenador elijio piedra, has ganado!";
-    case (playerChoice === "PAPEL" && computerAnswer === "Papel"):
+    case (playerChoice === "PAPEL" && computerChoice === "Papel"):
         return "Ordenador elijio papel, es empate!";
-    case (playerChoice === "PAPEL" && computerAnswer === "Tijera"):
+    case (playerChoice === "PAPEL" && computerChoice === "Tijera"):
+        computerScore++
         return "Ordenador elijio tijera, has perdido!";
-    case (playerChoice === "TIJERA" && computerAnswer === "Piedra"):
+    case (playerChoice === "TIJERA" && computerChoice === "Piedra"):
+        computerScore++
         return "Ordenador elijio piedra, has perdido!";
-    case (playerChoice === "TIJERA" && computerAnswer === "Papel"):
+    case (playerChoice === "TIJERA" && computerChoice === "Papel"):
+        playerScore++
         return "Ordenador elijio papel, has ganado!";
-    case (playerChoice === "TIJERA" && computerAnswer === "Tijera"):
+    case (playerChoice === "TIJERA" && computerChoice === "Tijera"):
         return "Ordenador elijio tijera, es empate!";
 } }
-// This is the message players recieve
-console.log(totalChoice(playerChoice, computerAnswer));
+let computerScore = 0;
+let playerScore = 0;
+//This is the game function
+function game(){
+    for (let i = 0; i < 5; i++){
+        let computerAnswer = computerRandom();
+        let prom = prompt("Piedra, papel o tijera?");
+        prom = prom.toUpperCase();
+        console.log(totalChoice(prom, computerAnswer))
+        console.log(playerScore + " " + computerScore)
+    }
+}
+console.log(game());
