@@ -5,8 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="javascript.js"></script>
+  <script src="javascript.js" defer></script>
 </head>
 <body>
+  <div>
+    <button class="game-button" data-choice="PIEDRA">PIEDRA</button>
+    <button class="game-button" data-choice="PAPEL">PAPEL</button>
+    <button class="game-button" data-choice="TIJERA">TIJERA</button>
+  </div>
+  <div id="score">
+    <p id="computerDisplay">Computer score</p>
+    <p id="playerDisplay">Player score</p>
+    <p id="announcement"></p>
+    <p id="winner"></p>
+  </div>
 </body>
 </html>
